@@ -1,6 +1,6 @@
-const checkEnvVariables = require("./check-env-variables")
+const checkEnvVariables = require("./check-env-variables");
 
-checkEnvVariables()
+checkEnvVariables();
 
 /**
  * @type {import('next').NextConfig}
@@ -15,7 +15,7 @@ const nextConfig = {
       },
       {
         protocol: "https",
-        hostname: process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL?.replace('https://', ''),
+        hostname: process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL?.replace("https://", ""),
       },
       {
         protocol: "https",
@@ -29,15 +29,23 @@ const nextConfig = {
         protocol: "https",
         hostname: "medusa-server-testing.s3.us-east-1.amazonaws.com",
       },
-      ...(process.env.NEXT_PUBLIC_MINIO_ENDPOINT ? [{
+      ...(process.env.NEXT_PUBLIC_MINIO_ENDPOINT
+        ? [
+            {
+              protocol: "https",
+              hostname: process.env.NEXT_PUBLIC_MINIO_ENDPOINT,
+            },
+          ]
+        : []),
+      {
         protocol: "https",
-        hostname: process.env.NEXT_PUBLIC_MINIO_ENDPOINT,
-      }] : []),
+        hostname: "bucket-production-5d43.up.railway.app", // Explicitly added your MinIO endpoint
+      },
     ],
   },
   serverRuntimeConfig: {
-    port: process.env.PORT || 3000
-  }
-}
+    port: process.env.PORT || 3000,
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
