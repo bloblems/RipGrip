@@ -39,7 +39,7 @@ const nextConfig = {
         : []),
       {
         protocol: "https",
-        hostname: "bucket-production-5d43.up.railway.app", // Explicitly added your MinIO endpoint
+        hostname: "bucket-production-5d43.up.railway.app", 
       },
     ],
   },

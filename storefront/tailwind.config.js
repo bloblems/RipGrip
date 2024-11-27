@@ -34,6 +34,13 @@ module.exports = {
           80: "#1F2937",
           90: "#111827",
         },
+        dark: {
+          bg: "#121212",
+          fg: "#ffffff",
+        },
+        'ui-border-base-dark': '#2D3748',
+        'ui-fg-subtle-dark': '#A0AEC0',
+        'ui-fg-base-dark': '#E2E8F0',
       },
       borderRadius: {
         none: "0px",
@@ -160,3 +167,4 @@ module.exports = {
   },
   plugins: [require("tailwindcss-radix")()],
 }
+
