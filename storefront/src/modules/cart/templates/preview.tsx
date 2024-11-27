@@ -16,12 +16,15 @@ const ItemsPreviewTemplate = ({ items }: ItemsTemplateProps) => {
 
   return (
     <div
-      className={clx({
+      className={clx(
+        "dark:bg-dark-bg dark:text-dark-fg",
+        {
         "pl-[1px] overflow-y-scroll overflow-x-hidden no-scrollbar max-h-[420px]":
           hasOverflow,
-      })}
+        }
+      )}
     >
-      <Table>
+      <Table className="dark:border-ui-border-base-dark">
         <Table.Body data-testid="items-table">
           {items
             ? items
@@ -41,3 +44,4 @@ const ItemsPreviewTemplate = ({ items }: ItemsTemplateProps) => {
 }
 
 export default ItemsPreviewTemplate
+

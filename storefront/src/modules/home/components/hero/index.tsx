@@ -1,4 +1,5 @@
 import { Button, Heading } from "@medusajs/ui"
+import Link from "next/link"
 
 const Hero = () => {
   return (
@@ -11,9 +12,11 @@ const Hero = () => {
           Elevate your performance with unmatched control and comfort. <br></br>
           The RIP GRIP: Your ultimate advantage in any sport.
         </p>
-        <Button variant="primary" size="large" className="w-full sm:w-auto px-8">
-          Buy now
-        </Button>
+        <Link href="/products/ripgrip" passHref legacyBehavior>
+          <Button variant="primary" size="large" className="w-full sm:w-auto px-8">
+            Buy now
+          </Button>
+        </Link>
       </div>
     </div>
   )
